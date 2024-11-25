@@ -60,6 +60,6 @@ def dashboard():
         top_survival_rate_chart=top_survival_rate_chart
     )
 
-if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=8080)  # Change port to 8080
+if __name__ == "__main__": 
+    app.run(host='0.0.0.0', port=8000)
 
