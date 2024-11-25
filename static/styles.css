@@ -1,0 +1,180 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #050404;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Section */
+header {
+    text-align: center;
+    /* background-color: #007BFF; */
+    color: white;
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+header h2 {
+    font-size: 18px;
+    margin: 10px 0 0;
+}
+
+/* Assignment Details Section */
+.assignment-details {
+    text-align: left;
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 90%;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color: #333;
+}
+
+.assignment-details p {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+/* Filters Section */
+form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px auto;
+}
+
+form label, form select, form button {
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form select {
+    width: 200px;
+    font-size: 14px;
+}
+
+form button {
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Section Styling */
+section {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 90%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+section div {
+    margin: 20px 0;
+}
+
+/* Static Visualizations */
+section img {
+    display: block;
+    margin: 0 auto;
+    max-width: 90%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Interactive Visualizations */
+section div div {
+    margin: 20px auto;
+    max-width: 95%;
+}
+
+/* Data Table */
+.data-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.data-table th, .data-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.data-table th {
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+}
+
+.data-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.data-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Visualization Grid Layout */
+section .visualization-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for desktop */
+    gap: 20px; /* Spacing between items */
+}
+
+/* Visualization Card Styling */
+section .visualization-grid div {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Headings for Visualizations */
+section .visualization-grid h3 {
+    font-size: 18px;
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+/* Responsive Design: Single column on smaller devices */
+@media screen and (max-width: 768px) {
+    section .visualization-grid {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+    }
+}

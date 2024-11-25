@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid-19 Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>COVID-19 DASHBOARD</h1>
+        <h2>Comprehensive Analysis of COVID-19 Data</h2>
+    </header>
+
+    <!-- Assignment Details -->
+    <section class="assignment-details">
+        <p><strong>Student Name:</strong> Dheeraj Kumar </p>
+        <p><strong>Student ID:</strong> 16360899 </p>
+        <p><strong>Course:</strong> Fall 2024 CS 5525 Cloud Computing Assignment 6</p>
+    </section>
+
+    <!-- Filters Section -->
+    <section>
+        <h2>Filter Options</h2>
+        <form method="POST" action="/">
+            <label for="state">Select State:</label>
+            <select id="state" name="state">
+                {% for state in states %}
+                <option value="{{ state }}" {% if state == selected_state %}selected{% endif %}>{{ state }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Apply Filters</button>
+        </form>
+    </section>
+
+    <!-- Static Visualizations -->
+    <section>
+        <h2>Static Visualizations</h2>
+        <div>
+            <h3>Top 10 States by Total Cases</h3>
+            <img src="{{ url_for('static', filename='case_density.png') }}" alt="Case Density">
+        </div>
+        <div>
+            <h3>Top 10 States by Vaccination Completion Rate (%)</h3>
+            <img src="{{ url_for('static', filename='vaccination_completion.png') }}" alt="Vaccination Completion">
+        </div>
+        <div>
+            <h3>Top 10 States by Deaths</h3>
+            <div>{{ top_deaths_chart | safe }}</div>
+        </div>
+        <div>
+            <h3>Top 10 States by Survival Rate (%)</h3>
+            <div>{{ top_survival_rate_chart | safe }}</div>
+        </div>
+    </section>
+
+    <!-- Interactive Visualizations -->
+    <section>
+        <h2>Interactive Visualizations</h2>
+        <div>
+            <h3>ICU Bed Utilization</h3>
+            <div>{{ icu_chart | safe }}</div>
+        </div>
+        <div>
+            <h3>Top 10 States by Infection Rate (%)</h3>
+            <div>{{ infection_rate_chart | safe }}</div>
+        </div>
+        <div>
+            <h3>Positive vs Negative Tests by State</h3>
+            <div>{{ tests_chart | safe }}</div>
+        </div>
+        <div>
+            <h3>Beds in Use by COVID Patients vs Total Beds</h3>
+            <div>{{ beds_in_use_chart | safe }}</div>
+        </div>
+        <div>
+            <h3>Vaccines Distributed vs Administered</h3>
+            <div>{{ vaccines_chart | safe }}</div>
+        </div>
+        <div>
+            <h3>Cumulative Deaths vs Surviving Population</h3>
+            <div>{{ cumulative_deaths_chart | safe }}</div>
+        </div>
+    </section>
+
+    <!-- Data Table -->
+    <section>
+        <h2>Covid-19 Data Table</h2>
+        <div class="data-table">
+            {{ tables | safe }}
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Dashboard created using Flask, Plotly, and Matplotlib.</p>
+    </footer>
+</body>
+</html>
